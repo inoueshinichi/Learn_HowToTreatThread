@@ -12,3 +12,4 @@ DWORD WINAPI thread_entry(LPVOID arg) {
     get<2>(io) = count_prime(get<0>(io), get<1>(io));
     return 0;
 }
+
