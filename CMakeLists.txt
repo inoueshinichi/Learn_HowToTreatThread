@@ -172,14 +172,24 @@ add_executable(PrimeCounter
     prime_counter.cpp
 )
 
+# C++ standard thread
+add_executable(CppStandardThread
+    prime.hpp
+    div_range.hpp
+)
 
-# Windows API or pthread
+
 if(MSVC)
-
-
-
+    # Windows API thread
+    add_executable(WinApiThread
+        prime.hpp
+        div_range.hpp
+        win_api_thread.cpp
+    )
 else()
-
-
-
+    # Unix pthread
+    add_executable(PThread
+        prime.hpp
+        div_range.hpp
+    )
 endif()
