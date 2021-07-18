@@ -166,6 +166,10 @@ message(STATUS "========== [START] C++ Build Core ==========")
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
+# pthread
+find_package(Threads REQUIRED)
+
+
 # prime_counter
 add_executable(PrimeCounter
     prime.hpp
@@ -176,8 +180,12 @@ add_executable(PrimeCounter
 add_executable(CppStandardThread
     prime.hpp
     div_range.hpp
+    cpp_standard_thread.cpp
 )
 
+target_link_libraries(CppStandardThread
+    PRIVATE Threads::Threads
+)
 
 if(MSVC)
     # Windows API thread
@@ -187,9 +195,9 @@ if(MSVC)
         win_api_thread.cpp
     )
 else()
-    # Unix pthread
-    add_executable(PThread
-        prime.hpp
-        div_range.hpp
-    )
+    # # Unix pthread
+    # add_executable(PThread
+    #     prime.hpp
+    #     div_range.hpp
+    # )
 endif()

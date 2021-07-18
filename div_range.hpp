@@ -10,7 +10,7 @@ class div_range {
 public:
     div_range(T lo, T hi, int n)
         : lo_(lo), hi_(hi), n_(n) { strides_ = (hi - lo) / n; }
-    T lo(int n) { return lo + strides_ * n; }
+    T lo(int n) { return lo_ + strides_ * n; }
     T hi(int n) { return (++n < n_) ? lo_ + strides_ * n : hi_; }
 };
 
