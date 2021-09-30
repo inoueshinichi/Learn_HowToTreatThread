@@ -166,3 +166,4 @@ message(STATUS "========== [START] C++ Build Core ==========")
 
 add_subdirectory(basic_tutorial)
 add_subdirectory(addition1)
+add_subdirectory(addition2)
