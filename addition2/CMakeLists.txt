@@ -7,11 +7,18 @@ find_package(Threads REQUIRED)
 
 # -----------------------------------------------
 
-# list_01 スレッドの生成
+# list2_01 データ競合とミューテックス
 add_executable(LIST201
     list2_01.cpp
 )
 list(APPEND Targets LIST201)
+
+
+# list2_02 ミューテックスによるデッドロック
+add_executable(LIST202
+    list2_02.cpp
+)
+list(APPEND Targets LIST202)
 
 
 

@@ -1,4 +1,13 @@
-
+/**
+ * @file list2_01.cpp
+ * @author your name (you@domain.com)
+ * @brief データ競合とミューテックス
+ * @version 0.1
+ * @date 2021-10-18
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <iostream>
 #include <thread>
 #include <functional>
